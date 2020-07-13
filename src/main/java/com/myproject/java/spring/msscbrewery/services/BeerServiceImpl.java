@@ -5,8 +5,6 @@ import java.util.UUID;
 import org.springframework.stereotype.Service;
 
 import com.myproject.java.spring.msscbrewery.web.model.BeerDTO;
-import com.myproject.java.spring.msscbrewery.web.model.CustomerDTO;
-
 import lombok.extern.slf4j.Slf4j;
 
 @Slf4j
