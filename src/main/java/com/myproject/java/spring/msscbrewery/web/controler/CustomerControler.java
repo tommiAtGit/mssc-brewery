@@ -15,7 +15,6 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.myproject.java.spring.msscbrewery.services.CustomerService;
-import com.myproject.java.spring.msscbrewery.web.model.BeerDTO;
 import com.myproject.java.spring.msscbrewery.web.model.CustomerDTO;
 
 @RequestMapping("/api/v1/customer")
@@ -42,11 +41,11 @@ public class CustomerControler {
 		CustomerDTO savedCustomer = customerService.saveCustomer(customerDTO);
 		HttpHeaders headers = new HttpHeaders();
 		
-		headers.add("Location", "/api/v1/customer " + savedCustomer.getId().toString() );
+		headers.add("Location", "/api/v1/customer/" + savedCustomer.getId().toString() );
 		return new ResponseEntity<CustomerDTO>(headers, HttpStatus.CREATED);
 	}
 	
-	@PutMapping({"/{cutomerId}"})
+	@PutMapping({"/{customerId}"})
 	public ResponseEntity<CustomerDTO> handleUpdate (@PathVariable("customerId") UUID customerId,@RequestBody CustomerDTO customerDTO){
 		
 		customerService.updateCustomer(customerId,customerDTO);
@@ -54,7 +53,7 @@ public class CustomerControler {
 		return new ResponseEntity<CustomerDTO>(HttpStatus.NO_CONTENT);
 	}
 	
-	@DeleteMapping({"/{cutomerId}"})
+	@DeleteMapping({"/{customerId}"})
 	public void deleteCustomer(@PathVariable("customerId") UUID customerId) {
 		customerService.deleteCustomer(customerId);
 	}

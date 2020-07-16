@@ -46,7 +46,7 @@ public class BeerControler {
 		HttpHeaders headers = new HttpHeaders();
 		
 		//ToDo add host name to URL
-		headers.add("Location", "/api/v1/beer " + savedBeer.getId().toString() );
+		headers.add("Location", "/api/v1/beer/" + savedBeer.getId().toString() );
 		
 		return new ResponseEntity<BeerDTO>(headers, HttpStatus.CREATED);
 		
