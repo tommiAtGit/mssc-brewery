@@ -2,15 +2,15 @@ package com.myproject.java.spring.msscbrewery.services;
 
 import java.util.UUID;
 
-import com.myproject.java.spring.msscbrewery.web.model.CustomerDTO;
+import com.myproject.java.spring.msscbrewery.web.model.CustomerDto;
 
 public interface CustomerService {
 
-	CustomerDTO getCustomerById(UUID id);
+	CustomerDto getCustomerById(UUID id);
 
-	CustomerDTO saveCustomer(CustomerDTO customerDTO);
+	CustomerDto saveCustomer(CustomerDto customerDTO);
 
-	CustomerDTO updateCustomer(UUID customerId, CustomerDTO customerDTO);
+	CustomerDto updateCustomer(UUID customerId, CustomerDto customerDTO);
 
 	void deleteCustomer(UUID customerId);
 }

@@ -2,15 +2,15 @@ package com.myproject.java.spring.msscbrewery.services;
 
 import java.util.UUID;
 
-import com.myproject.java.spring.msscbrewery.web.model.BeerDTO;
+import com.myproject.java.spring.msscbrewery.web.model.BeerDto;
 
 public interface BeerService {
 
-	BeerDTO getBeerById(UUID beerId);
+	BeerDto getBeerById(UUID beerId);
 
-	BeerDTO saveBeer(BeerDTO beerDTO);
+	BeerDto saveBeer(BeerDto beerDTO);
 
-	void updateBeer(UUID beerId, BeerDTO beerDTO);
+	void updateBeer(UUID beerId, BeerDto beerDTO);
 
 	void deleteBeer(UUID beerId);
 

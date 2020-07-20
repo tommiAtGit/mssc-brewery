@@ -4,7 +4,7 @@ import java.util.UUID;
 
 import org.springframework.stereotype.Service;
 
-import com.myproject.java.spring.msscbrewery.web.model.CustomerDTO;
+import com.myproject.java.spring.msscbrewery.web.model.CustomerDto;
 
 import lombok.extern.slf4j.Slf4j;
 
@@ -13,8 +13,8 @@ import lombok.extern.slf4j.Slf4j;
 public class CustomerServiceImpl implements CustomerService {
 
 	@Override
-	public CustomerDTO getCustomerById(UUID id) {
-		return CustomerDTO.builder().id(UUID.randomUUID())
+	public CustomerDto getCustomerById(UUID id) {
+		return CustomerDto.builder().id(UUID.randomUUID())
 				.firstName("Pommi")
 				.lastName("Portaikko")
 				.Address("IsoMela 12")
@@ -23,16 +23,16 @@ public class CustomerServiceImpl implements CustomerService {
 	}
 
 	@Override
-	public CustomerDTO saveCustomer(CustomerDTO customerDTO) {
-		return CustomerDTO.builder()
+	public CustomerDto saveCustomer(CustomerDto customerDTO) {
+		return CustomerDto.builder()
 				.id(UUID.randomUUID())
 				.build();
 	}
 
 	@Override
-	public CustomerDTO updateCustomer(UUID customerId, CustomerDTO customerDTO) {
+	public CustomerDto updateCustomer(UUID customerId, CustomerDto customerDTO) {
 		log.debug("Update customer");
-		return CustomerDTO.builder()
+		return CustomerDto.builder()
 				.id(customerId)
 				.build();
 	}

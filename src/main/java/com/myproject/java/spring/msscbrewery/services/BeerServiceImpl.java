@@ -4,7 +4,7 @@ import java.util.UUID;
 
 import org.springframework.stereotype.Service;
 
-import com.myproject.java.spring.msscbrewery.web.model.BeerDTO;
+import com.myproject.java.spring.msscbrewery.web.model.BeerDto;
 import lombok.extern.slf4j.Slf4j;
 
 @Slf4j
@@ -12,21 +12,21 @@ import lombok.extern.slf4j.Slf4j;
 public class BeerServiceImpl implements BeerService {
 
 	@Override
-	public BeerDTO getBeerById(UUID beerId) {
-		return BeerDTO.builder().id(UUID.randomUUID())
+	public BeerDto getBeerById(UUID beerId) {
+		return BeerDto.builder().id(UUID.randomUUID())
 				.beerName("Sol")
 				.beerStyle("Lager")
 				.build();
 	}
 
-	public BeerDTO saveBeer(BeerDTO beerDTO) {
-		return BeerDTO.builder()
+	public BeerDto saveBeer(BeerDto beerDTO) {
+		return BeerDto.builder()
 				.id(UUID.randomUUID())
 				.build();
 	}
 
 	@Override
-	public void updateBeer(UUID beerId, BeerDTO beerDTO) {
+	public void updateBeer(UUID beerId, BeerDto beerDTO) {
 		log.debug("Update beer stub");
 		
 		
