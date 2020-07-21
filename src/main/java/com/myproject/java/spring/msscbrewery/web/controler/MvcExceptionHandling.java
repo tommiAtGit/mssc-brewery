@@ -16,7 +16,7 @@ import org.springframework.validation.BindException;
 public class MvcExceptionHandling {
 
 	@ExceptionHandler(ConstraintViolationException.class)
-	public ResponseEntity<List> validationErrorHandler(ConstraintViolationException e){
+	public ResponseEntity<List<String>> validationErrorHandler(ConstraintViolationException e){
 		List<String>errors = new ArrayList<String>(e.getConstraintViolations().size());
 		
 		e.getConstraintViolations().forEach(constraintViolation ->{
